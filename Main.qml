@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
-
+import RowColumnStudentDataWithServer
 
 ApplicationWindow {
     id: window
@@ -12,5 +12,5 @@ ApplicationWindow {
     visible: true
     title: qsTr("Server Data Test")
 
-
+    StudentRowItemNetwork{}
 }
