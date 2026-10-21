@@ -44,9 +44,7 @@ Rectangle{
         id: contentRow
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.right:  parent.right
         anchors.leftMargin: 12
-        anchors.rightMargin: 12
         spacing: 10
 
         //1. Index Badge(Uses Positioner attached property)
@@ -56,7 +54,7 @@ Rectangle{
             anchors.verticalCenter: parent.verticalCenter
 
             //Positioner.isFirstItem demo: top student get a gold tint!
-            color: Positioner.isFirstItem ? "#854d0e" : "#1e293b"
+            color: (root.itemIndex ===0) ? "#854d0e" : "#1e293b"
 
             Text{
                 anchors.centerIn: parent
@@ -64,7 +62,7 @@ Rectangle{
                 text: (root.itemIndex+1)
                 font.bold: true
                 font.pixelSize: 11
-                color: Positioner.isFirstItem ? "#fef08a" : "#94a3b8"
+                color: (root.itemIndex ===0) ? "#fef08a" : "#94a3b8"
             }
         }
         //Avatar Badge
@@ -99,7 +97,7 @@ Rectangle{
             Text{
                 text: "ID: #" + (root.studentData.id || "")
                 font.pixelSize: 10
-                color: "#f8fafc"
+                color: "#94a3b8"
             }
         }
         //4.Age Badge
@@ -150,20 +148,22 @@ Rectangle{
                 color: (root.studentData.status === "Active") ? "#34d399" : "#f472b6"
             }
         }
-        //7. INSPECT BUTTON
-        Rectangle{
-            width: 65; height: 26
-            radius: 5
-            anchors.verticalCenter: parent.verticalCenter
-            color: root.isSelected ? "#38bdf8" : "#334155"
+    }
+    //7. INSPECT BUTTON
+    Rectangle{
+        width: 65; height: 26
+        radius: 5
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right: parent.right
+        anchors.rightMargin: 12
+        color: root.isSelected ? "#38bdf8" : "#334155"
 
-            Text{
-                anchors.centerIn: parent
-                text: root.isSelected ? "Active" : "Inspect"
-                font.pixelSize: 10
-                font.bold: true
-                color: root.isSelected ? "#0f172a" : "#f1f5f9"
-            }
+        Text{
+            anchors.centerIn: parent
+            text: root.isSelected ? "Active" : "Inspect"
+            font.pixelSize: 10
+            font.bold: true
+            color: root.isSelected ? "#0f172a" : "#f1f5f9"
         }
     }
 
