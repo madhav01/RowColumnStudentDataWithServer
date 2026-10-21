@@ -73,7 +73,7 @@ Rectangle{
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 3
                     Text{
-                        text: (root.studentData && studentData.name) ? root.studentData.name : "select Student a student"
+                        text: (root.studentData && root.studentData.name) ? root.studentData.name : "Select a student"
                         font{
                             bold: true
                             pixelSize: 15
@@ -81,7 +81,7 @@ Rectangle{
                         color: "#f8fafc"
                     }
                     Text{
-                        text: (root.studentData && root.studentData.name) ? root.studentData.id : "-" + " • " + (root.studentData && root.studentData.status ? root.studentData.status: "Active")
+                        text: ((root.studentData && root.studentData.name) ? root.studentData.id : "-") + " • " + ((root.studentData && root.studentData.status) ? root.studentData.status: "Active")
                         font.pixelSize: 11
                         color: "#94a3b8"
                     }
@@ -129,22 +129,16 @@ Rectangle{
                     height: 5
                     radius: 2
                     color: "#334155"
-
                     Rectangle{
                         height: parent.height
                         radius: 2
-                        color: "#334155"
-
-                        Rectangle{
-                            height: parent.height
-                            radius: 2
-                            color: "#22c55e"
-                            width: {
-                                var val = (root.studentData.gpa) ? Number(root.studentData.gpa) : 0
-                                return Math.min(parent.width,(val/4.0)*parent.width)
-                            }
+                        color: "#22c55e"
+                        width: {
+                            var val = (root.studentData.gpa) ? Number(root.studentData.gpa) : 0
+                            return Math.min(parent.width,(val/4.0)*parent.width)
                         }
                     }
+
                 }
             }
         }
@@ -173,12 +167,12 @@ Rectangle{
                     color: "#f59e0b"
                 }
                 Text{
-                    text: "Age: " + (root.studentData && root.studentData.age ? root.studentData.age : "-") + "Year"
+                    text: "Age: " + (root.studentData && root.studentData.age ? root.studentData.age : "-") + " Year"
                     font.pixelSize: 11
                     color: "#cbd5e1"
                 }
                 Text{
-                    text: "Backend Sever: Drogon c++ (port 8080)"
+                    text: "Backend Server: Drogon c++ (port 8080)"
                     font.pixelSize: 10
                     color: "#B5BFC9"
                 }
@@ -198,12 +192,11 @@ Rectangle{
                     pixelSize: 10
                 }
                 color: "#f8fafc"
-
-                MouseArea{
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: root.showDetails = !root.showDetails
-                }
+            }
+            MouseArea{
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: root.showDetails = !root.showDetails
             }
         }
     }
