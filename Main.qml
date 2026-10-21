@@ -39,7 +39,7 @@ ApplicationWindow {
             Flickable{
                 width: parent.width
                 height: parent.height - 30
-                contentHeight: studentListColumn
+                contentHeight: studentListColumn.implicitHeight
                 clip: true
 
                 Column{
@@ -49,7 +49,7 @@ ApplicationWindow {
 
                     //Repeater creates a Student Row Item for every student in c++!
                     Repeater{
-                        model: serverData
+                        model: serverData.students
                         StudentRowItemNetwork{
 
                         }
