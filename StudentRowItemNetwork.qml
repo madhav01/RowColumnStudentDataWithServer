@@ -54,7 +54,7 @@ Rectangle{
             anchors.verticalCenter: parent.verticalCenter
 
             //Positioner.isFirstItem demo: top student get a gold tint!
-            color: (root.itemIndex ===0) ? "#854d0e" : "#1e293b"
+            color: (root.itemIndex === 0) ? "#854d0e" : "#1e293b"
 
             Text{
                 anchors.centerIn: parent

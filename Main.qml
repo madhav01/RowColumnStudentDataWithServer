@@ -51,7 +51,10 @@ ApplicationWindow {
                     Repeater{
                         model: serverData.students
                         StudentRowItemNetwork{
-
+                            studentData: modelData
+                            itemIndex: index
+                            isSelected: serverData.selectedStudent.id === modelData.id
+                            onInspectClicked: (id)=>serverData.selectStudent(id)
                         }
                     }
                 }
@@ -62,6 +65,7 @@ ApplicationWindow {
         StudentMetaColumnNetwork{
             width: parent.width * 0.45 - 16
             height: parent.height
+            studentData: serverData.selectedStudent
         }
     }
 }

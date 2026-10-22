@@ -32,6 +32,7 @@ signals:
     void studentsChanged();
     void selectedStudentChanged();
     void changelogsChanged();
+    void errorOccurred(const QString &errorMessage);
 private:
     // Network Manager instance
     QNetworkAccessManager *m_netManager = nullptr;
