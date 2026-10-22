@@ -58,6 +58,9 @@ ApplicationWindow {
                         }
                     }
                 }
+                ScrollBar.vertical: ScrollBar{
+                    policy: ScrollBar.AsNeeded
+                }
             }
         }
 
