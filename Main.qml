@@ -44,7 +44,7 @@ ApplicationWindow {
 
                 Column{
                     id: studentListColumn
-                    width: parent.width
+                    width: parent.width - 14  // ✅ Leaves a clean 14px space for the ScrollBar!
                     spacing: 8
 
                     //Repeater creates a Student Row Item for every student in c++!
@@ -53,7 +53,7 @@ ApplicationWindow {
                         StudentRowItemNetwork{
                             studentData: modelData
                             itemIndex: index
-                            isSelected: serverData.selectedStudent.id === modelData.id
+                            isSelected: serverData.selectedStudent && (serverData.selectedStudent.id === modelData.id)
                             onInspectClicked: (id)=>serverData.selectStudent(id)
                         }
                     }

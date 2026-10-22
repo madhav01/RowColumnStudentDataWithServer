@@ -54,7 +54,7 @@ Rectangle{
             anchors.verticalCenter: parent.verticalCenter
 
             //Positioner.isFirstItem demo: top student get a gold tint!
-            color: (root.itemIndex === 0) ? "#854d0e" : "#1e293b"
+            color: root.isSelected ? "#854d0e" : "#1e293b"
 
             Text{
                 anchors.centerIn: parent
@@ -62,7 +62,7 @@ Rectangle{
                 text: (root.itemIndex+1)
                 font.bold: true
                 font.pixelSize: 11
-                color: (root.itemIndex ===0) ? "#fef08a" : "#94a3b8"
+                color: root.isSelected ? "#fef08a" : "#94a3b8"
             }
         }
         //Avatar Badge

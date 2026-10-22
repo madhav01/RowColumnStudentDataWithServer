@@ -102,7 +102,7 @@ Rectangle{
                 spacing: 6
 
                 Text{
-                    text: "📊 Academic Performanc"
+                    text: "📊 Academic Performance"
                     font{
                         bold: true
                         pixelSize: 11
