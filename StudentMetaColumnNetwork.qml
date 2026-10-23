@@ -81,7 +81,7 @@ Rectangle{
                         color: "#f8fafc"
                     }
                     Text{
-                        text: ((root.studentData && root.studentData.name) ? root.studentData.id : "-") + " • " + ((root.studentData && root.studentData.status) ? root.studentData.status: "Active")
+                        text: ((root.studentData && root.studentData.name) ? root.studentData.id : "-") + " • " + ((root.studentData && root.studentData.status) ? root.studentData.status: ((root.studentData && root.studentData.name) ? "Active" : "-"))
                         font.pixelSize: 11
                         color: "#94a3b8"
                     }
@@ -112,12 +112,12 @@ Rectangle{
                 Row{
                     spacing: 16
                     Text{
-                        text: "Department: " + (root.studentData && root.studentData.department ? root.studentData.department : "CS")
+                        text: "Department: " + (root.studentData && root.studentData.department ? root.studentData.department : "-")
                         font.pixelSize: 11
                         color: "#e2e8f0"
                     }
                     Text{
-                        text: "GPA: " + (root.studentData && root.studentData.gpa ? Number(root.studentData.gpa).toFixed(2) : "0.00") + " /4.00"
+                        text: "GPA: " + (root.studentData && root.studentData.gpa ? Number(root.studentData.gpa).toFixed(2) + " /4.00" : "-")
                         font.bold: true
                         font.pixelSize: 11
                         color: "#4ade80"
