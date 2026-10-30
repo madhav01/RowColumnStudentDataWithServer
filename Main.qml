@@ -11,7 +11,7 @@ ApplicationWindow {
     minimumHeight: 250
     visible: true
     title: qsTr("Server Data Test")
-    visibility: Window.Maximized
+    // visibility: Window.Maximized
 
     BackendServer{
         id: serverData
